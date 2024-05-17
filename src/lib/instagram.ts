@@ -1,5 +1,3 @@
-import { CHATGPT_BTN_ID } from "../utils/constants";
-
 export const injector = () => {
 
   document
@@ -7,9 +5,9 @@ export const injector = () => {
       '._aagw'
     )
     .forEach((el) => {
-      if (el.getAttribute("hasChatGPT") === "true") return;
+      if (el.getAttribute("ig-download-botton") === "true") return;
 
-      el.setAttribute("hasChatGPT", "true");
+      el.setAttribute("ig-download-botton", "true");
 
       const downloadButton = document.createElement("button");
       downloadButton.setAttribute("type", "button");
@@ -46,7 +44,7 @@ export const handler = async () => {
       })
         .then(apiResponse => {
           console.log('API Response:', apiResponse);
-          alert('Image has been saved!');
+          alert('Image successfully added to list!');
         })
         .catch(apiError => {
           console.error('Error sending image to API:', apiError);
