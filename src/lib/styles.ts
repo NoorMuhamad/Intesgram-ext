@@ -1,5 +1,4 @@
 import { ANNOUNCEMENT_WRAPPER } from "../utils/announcements";
-import { CHATGPT_BTN_ID, TOAST_CLASSNAME } from "../utils/constants";
 
 export default () => {
   const styles = `<style>
@@ -66,32 +65,6 @@ export default () => {
       align-items: center;
     }
 
-    #${CHATGPT_BTN_ID}.twitter{
-      width: 34px;
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 5px;
-    }
-
-    #${CHATGPT_BTN_ID}.twitter svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    #${CHATGPT_BTN_ID}{
-      cursor: pointer;
-    }
-
-    #${CHATGPT_BTN_ID}:disabled, #${CHATGPT_BTN_ID}[disabled="true"] {
-      opacity: 0.3 !important;
-      cursor: not-allowed;
-    }
-
-    #${CHATGPT_BTN_ID}[loading="true"] {
-      animation: rotation 2s infinite linear;
-    }
 
     [force-flex="true"] {
       display: flex;
@@ -104,30 +77,6 @@ export default () => {
       to {
         transform: rotate(359deg);
       }
-    }
-
-    .${TOAST_CLASSNAME} .title {
-      font-weight: bold;
-    }
-
-
-    .${TOAST_CLASSNAME} p {
-      color: #fff;
-      margin: 0;
-    }
-
-    .${TOAST_CLASSNAME} p.small {
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
-    .${TOAST_CLASSNAME} a, .${TOAST_CLASSNAME} a:hover, .${TOAST_CLASSNAME} a:focus {
-      color: #ffff00 !important;
-      text-decoration: none;
-    }
-
-    .${TOAST_CLASSNAME}.twitter {
-      font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     ${notyfCSS}

@@ -2,27 +2,19 @@ import { Notyf } from "notyf";
 
 import appendStyles from "../lib/styles";
 import { ALLOWED_DOMAINS, Domains } from "../utils/constants";
-import {
-  injector as linkedInInjector,
-  handler as linkedInHandler,
-} from "../lib/linkedin";
+
 import {
   injector as instagramInjector,
   handler as instagramHandler,
 } from "../lib/instagram";
-import {
-  injector as twitterInjector,
-  handler as twitterHandler,
-} from "../lib/twitter";
+
 import {
   injector as announcementInjector,
   handler as announcementHandler,
 } from "../utils/announcements";
 
 const service: Record<Domains, [() => void, () => Promise<void>]> = {
-  [Domains.LinkedIn]: [linkedInInjector, linkedInHandler],
   [Domains.Instagram]: [instagramInjector, instagramHandler],
-  [Domains.Twitter]: [twitterInjector, twitterHandler],
 };
 
 export let notyf: Notyf | undefined;

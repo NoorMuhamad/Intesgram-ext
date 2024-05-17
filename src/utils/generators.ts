@@ -12,12 +12,6 @@ export const createPrompt = (
     case Domains.Instagram:
       prompts = config["opt-insta-prompts"];
       break;
-    case Domains.LinkedIn:
-      prompts = config["opt-linkedin-prompts"];
-      break;
-    case Domains.Twitter:
-      prompts = config["opt-twitter-prompts"];
-      break;
   }
 
   let prompt = prompts?.[Math.floor(Math.random() * prompts.length)] || "";
@@ -40,24 +34,6 @@ export const createPrompt = (
     prompt += ` please strictly don't mention any of the following words: ${words};`;
   }
 
-  // Comment style option
-  switch (config?.["opt-comment-style"]) {
-    case CommentsStyle.PROFESSIONAL:
-      prompt += " please respond in a very professional way.";
-      break;
-    case CommentsStyle.INFORMAL:
-      prompt += " please respond in very informal way.";
-      break;
-    case CommentsStyle.DIRECT:
-      prompt += " please respond in very direct way.";
-      break;
-    case CommentsStyle.FRIENDLY:
-      prompt += " please respond in very friendly way.";
-      break;
-    case CommentsStyle.FUNNY:
-      prompt += " please respond in a very funny way.";
-      break;
-  }
 
   if (prompt[prompt.length - 1] === ";") {
     prompt = prompt.substring(0, prompt.length - 1);

@@ -10,10 +10,6 @@ import ICTwitter from "../components/IcTwitter";
 import Logo from "../components/Logo";
 import Section, { Props as SectionProps } from "../components/Section";
 import Tab, { TabItem } from "../components/Tab";
-import CommentStyleOptions from "./containers/CommentStyleOptions";
-import HashtagOptions from "./containers/HashtagOptions";
-import ExcludedWords from "./containers/ExcludedWords";
-import Prompts from "./containers/Prompts";
 import { Domains } from "../utils/constants";
 
 import "./common.css";
@@ -24,21 +20,6 @@ const SECTIONS: (SectionProps & { comp: JSX.Element })[] = [
   //   desc: "Model to use for OpenAI API. text-davinci-003 produces higher quality writing.",
   //   comp: <ModelOptions />,
   // },
-  {
-    title: "Comment style",
-    desc: "Whether generated comments will be professional, informal, etc.",
-    comp: <CommentStyleOptions />,
-  },
-  {
-    title: "Allow hashtags",
-    desc: "Would you like to allow hashtags in generated comments?",
-    comp: <HashtagOptions />,
-  },
-  {
-    title: "Words to avoid",
-    desc: "Words that will not be mentioned often in generated comments. It's not 100% guaranteed these words won't be mentioned.",
-    comp: <ExcludedWords />,
-  },
 ];
 
 const TABS: TabItem[] = [
@@ -57,21 +38,6 @@ const TABS: TabItem[] = [
       </>
     ),
     icon: <IcSettings />,
-  },
-  {
-    title: "Instagram Prompts",
-    comp: <Prompts type={Domains.Instagram} />,
-    icon: <IcInstagram />,
-  },
-  {
-    title: "LinkedIn Prompts",
-    comp: <Prompts type={Domains.LinkedIn} />,
-    icon: <IcLinkedIn />,
-  },
-  {
-    title: "Twitter Prompts",
-    comp: <Prompts type={Domains.Twitter} />,
-    icon: <ICTwitter />,
   },
 ];
 

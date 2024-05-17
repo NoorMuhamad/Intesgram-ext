@@ -81,19 +81,9 @@ export const injector = (domain: Domains) => {
       .join("")}</div>`;
 
     switch (domain) {
-      case Domains.LinkedIn:
-        document
-          .querySelector("main > div:first-of-type")
-          ?.insertAdjacentHTML("afterend", content);
-        break;
       case Domains.Instagram:
         document
           .querySelector(`section > div > div:first-of-type`)
-          ?.insertAdjacentHTML("afterend", content);
-        break;
-      case Domains.Twitter:
-        document
-          .querySelector(`nav[aria-live="polite"]`)
           ?.insertAdjacentHTML("afterend", content);
         break;
     }
